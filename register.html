@@ -569,7 +569,7 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
       <!-- ============ QR ============ -->
       <div class="qr-panel" id="qr">
         <h2>QR code for this form</h2>
-        <p>For the Foundation: put this code on <strong style="color:#f2ecd9">tglff.org next to the fundraising link</strong>, on flyers, and at the gate. Anyone who scans it lands on the registration form and can complete it on their phone. Paste this form’s published web address below, tap “Update QR”, then download the code as a picture ready to add to the website.</p>
+        <p>For the Foundation: put this code on <strong style="color:#f2ecd9">tglff.org next to the fundraising link</strong>, on flyers, and at the gate. Anyone who scans it lands on the registration form and can complete it on their phone. The code below already points at this form's published address — download it as a picture ready to use.</p>
         <div class="qr-flex">
           <div class="qr-card">
             <canvas id="qr-canvas" width="216" height="216" aria-label="QR code for the Lake Waldensia registration form"></canvas>
@@ -577,12 +577,12 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
           </div>
           <div class="qr-controls">
             <label for="qr-url">Web address this QR code opens</label>
-            <input type="url" id="qr-url" value="https://tglff.org" inputmode="url" />
+            <input type="url" id="qr-url" value="https://tglff.org/register.html" inputmode="url" />
             <div class="row">
               <button type="button" class="qr-update" id="btn-qr-update">Update QR code</button>
               <button type="button" class="qr-download" id="btn-qr-download">Download QR picture</button>
             </div>
-            <p class="qr-status" id="qr-status">Right now the code points to tglff.org. Once this form is published, paste its address above and update the code — that updated code is the one to place beside the fundraising link.</p>
+            <p class="qr-status" id="qr-status">This code points to this form — https://tglff.org/register.html — and it is already on tglff.org beside the fundraising link.</p>
             <p class="qr-status">One-time setup for sending: the very first registration sent from this form triggers a confirmation email to will@tglff.org from the form-delivery service — click the link in it once, and every registration after that lands directly in the inbox.</p>
           </div>
         </div>
