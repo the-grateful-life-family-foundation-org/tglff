@@ -530,6 +530,8 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
         <section class="card" aria-labelledby="h-agree">
           <div class="sec-head"><div class="sec-num">5</div><h2 id="h-agree">Agreements</h2></div>
           <p class="sec-sub">The land asks a few things of everyone who comes to it.</p>
+          <p class="legal">Lake Waldensia welcomes you as a member of our extended family. Because this is a working conservation property — a lake, waterfall, forest and farmland — and because everyone here lives and works closely together, every person authorized to be on the property agrees to the terms of the Foundation&rsquo;s hold harmless agreement, upon arrival, or by reservation and prior to any activity on the property. Your signed agreement becomes part of a permanent membership file maintained by The Grateful Life Family Foundation.</p>
+          <p class="legal">For your peace of mind and security, and the security of everyone on the land, every person authorized to be on the property must have a valid government-issued photo ID, shown on arrival. No one is admitted without one — guest, volunteer, steward, partner, or family member — because everyone on the property is a known member of our extended family, and the Foundation keeps a permanent membership file for every person on the land.</p>
           <div class="agree-list">
             <label class="choice"><input type="checkbox" id="a-land" />
               <span class="choice-body"><span class="choice-title">I’ll care for the land <span class="req">*</span></span>
@@ -537,6 +539,12 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
             <label class="choice"><input type="checkbox" id="a-true" />
               <span class="choice-body"><span class="choice-title">What I’ve written is true <span class="req">*</span></span>
               <span class="choice-desc">The information in this registration is accurate as far as I know, and I understand a booking is confirmed only when the Foundation replies.</span></span></label>
+            <label class="choice"><input type="checkbox" id="a-hold" />
+              <span class="choice-body"><span class="choice-title">Hold harmless agreement <span class="req">*</span></span>
+              <span class="choice-desc">I agree to the Foundation’s hold harmless agreement, signed on arrival or by reservation before any activity on the property, and kept in my permanent membership file.</span></span></label>
+            <label class="choice"><input type="checkbox" id="a-id" />
+              <span class="choice-body"><span class="choice-title">Valid photo ID for everyone <span class="req">*</span></span>
+              <span class="choice-desc">I will bring a valid government-issued photo ID, and everyone coming with me will too. No one is admitted without one — for the peace of mind and security of everyone on the land.</span></span></label>
           </div>
           <div id="legal-partner" hidden>
             <div class="legal">
@@ -738,6 +746,8 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
           L.push("AGREEMENTS");
           L.push("Care for the land: " + ($("a-land").checked ? "AGREED" : "not yet agreed"));
           L.push("Information is true: " + ($("a-true").checked ? "AGREED" : "not yet agreed"));
+          L.push("Hold harmless agreement: " + ($("a-hold").checked ? "AGREED" : "not yet agreed"));
+          L.push("Valid photo ID for everyone: " + ($("a-id").checked ? "AGREED" : "not yet agreed"));
           if(!$("legal-partner").hidden) L.push("Understands not a land purchase / not equity / no return promised: " + ($("a-legal").checked ? "AGREED" : "not yet agreed"));
           var text = L.join("\n");
           $("summary").textContent = text;
@@ -759,6 +769,8 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
           if(currentPath() === "Land Steward" && !val("q-stew-exp")) errs.push("Stewards: tell us about your land experience (step 4).");
           if(!$("a-land").checked) errs.push("Please agree to care for the land (step 5).");
           if(!$("a-true").checked) errs.push("Please confirm what you’ve written is true (step 5).");
+          if(!$("a-hold").checked) errs.push("Please agree to the hold harmless agreement (step 5).");
+          if(!$("a-id").checked) errs.push("Please confirm you will bring a valid photo ID, and everyone coming with you will too (step 5).");
           if(!$("legal-partner").hidden && !$("a-legal").checked) errs.push("Please confirm you understand the partnership terms (step 5).");
           return errs;
         }
